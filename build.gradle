@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+}
+
+group 'Fanatic'
+version '1.0-SNAPSHOT'
+apply plugin: 'application'
+apply plugin: 'java'
+sourceCompatibility = 1.8
+mainClassName = "fr.fanaticstudio.matthis974jump.botsurveillancediscord.MainSystem"
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'com.google.code.gson', name: 'gson', version: '2.7'
+    compile group: 'org.yaml', name: 'snakeyaml', version: '1.8'
+    compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.6.1'
+    compile group: 'com.zaxxer', name: 'HikariCP', version: '2.7.8'
+    compile group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '1.1.7'
+    compile files("C:\\libs\\JDA-3.6.0_354-withDependencies.jar")
+    compile 'org.jsoup:jsoup:1.11.3'
+
+}
+
+task customFatJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class':mainClassName
+    }
+    baseName = applicationName
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+

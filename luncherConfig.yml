@@ -1,0 +1,11 @@
+!!fr.fanaticstudio.matthis974jump.botsurveillancediscord.corebot.LauncherConfig
+bots:
+- disallowedWords: ['fortnitecbien','fortnite','fuck','merde','putain','salaud','salope','pute','tepu','fdp','fils de pute','ta mere','alaworkba','famille','encetres','penis','zizi']
+  game: Coucou !
+  name: Surveillance_Bot_Fanatic
+  tag: '/'
+  token: NDQ3NDIzMTUzODgzNTc4MzY5.DeHmlQ.8xeOCOi8daiey7_SywFFRUWhIDM
+dc: {databaseName: botsdiscord, maxPoolSize: 20, password: if39yt7YBxx6an7LKh5kTx426XC9L63r8x333yZJDZ6zcY79W86CMi5pF97Pp9UfAuM4RQafQfXNZrP5357D7W3S9Kme5u3xze3YA844NjnveXb6K3spJg3egBL7Tbp6d6MeiytC4MN6AXH2UHd64r,
+  port: 3307, serverAdress: localhost, user: botsDiscord}
+maxMemory: 1024
+wtfIsThat: false
