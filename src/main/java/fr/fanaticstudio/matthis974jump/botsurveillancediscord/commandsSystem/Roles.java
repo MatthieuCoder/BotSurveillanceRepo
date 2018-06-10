@@ -32,7 +32,7 @@ public enum Roles {
         return false;
     }
 
-    protected static Roles getUserLevel(Member member) {
+    public static Roles getUserLevel(Member member) {
         List<String> rolesId = new ArrayList<>();
         for (Role r : member.getRoles()) rolesId.add(r.getId());
         for (Roles r : values()) {

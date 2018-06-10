@@ -2,6 +2,7 @@ package fr.fanaticstudio.matthis974jump.botsurveillancediscord.corebot;
 
 import fr.fanaticstudio.matthis974jump.botsurveillancediscord.BotObject;
 import fr.fanaticstudio.matthis974jump.botsurveillancediscord.MainSystem;
+import fr.fanaticstudio.matthis974jump.botsurveillancediscord.commandsSystem.Roles;
 import fr.fanaticstudio.matthis974jump.botsurveillancediscord.hikarihikaricp.entities.Account;
 import fr.fanaticstudio.matthis974jump.botsurveillancediscord.hikarihikaricp.entities.Warn;
 import net.dv8tion.jda.core.EmbedBuilder;
@@ -54,7 +55,7 @@ public class Listener implements EventListener {
     }
 
     private void onMessage(GuildMessageReceivedEvent event) throws Exception {
-        if (!event.getGuild().getMember(event.getAuthor()).getRoles().contains(event.getJDA().getRoleById("446207488757465090"))) {
+        if (!(Roles.getUserLevel(event.getMember()).getLevel() > Roles.RESP_ADMIN.getLevel())) {
             String message = event.getMessage().getContentRaw();
             message = message.toLowerCase();
             message = message.replace(" ","");
